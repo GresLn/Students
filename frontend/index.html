@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список студентов</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer type="module" src="./main.js"></script>
+</head>
+
+<body>
+    <div id="students-list" class="container">
+        <form action="" id="form-filter" class="form-inline">
+            <input type="text" id="fio-filter" class="form-control mb-2 mr-sm-2" placeholder="ФИО">
+            <input type="text" id="faculty-filter" class="form-control mb-2 mr-sm-2" placeholder="Факультет">
+            <input type="number" id="learn-start-filter" class="form-control mb-2 mr-sm-2" placeholder="Год начала обучения">
+            <input type="number" id="learn-end-filter" class="form-control mb-2 mr-sm-2" placeholder="Год окончания обучения">
+            <button type="submit" class="filter-student-list btn btn-primary mb-2 mr-sm-2">Фильтровать</button>
+            <button type="button" id="btn-clean" class="btn btn-primary mb-2 mr-sm-2">Очистить</button>
+        </form>
+        <table class="table" style="margin-bottom: 30px;">
+            <thead class="thead-light">
+                <tr>
+                    <th id = "fio">Ф. И. О. студента</th>
+                    <th id = "faculty">Факультет</th>
+                    <th id = "date-age">Дата рождения и возраст</th>
+                    <th id = "learn-time">Годы обучения и номер курса</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="students-table">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+.error {
+    border-color: red;
+}
+
+.error-text {
+    color: red;
+}
+
+.head-title {
+    cursor: pointer;
+}
