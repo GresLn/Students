@@ -39,71 +39,6 @@ async function serverDeleteStudent(id) {
 
 let studentsList = [];
 
-// let studentsList = [{
-//         // id: 1,
-//         name: 'Васисуалий',
-//         surname: 'Лоханкин',
-//         lastname: 'Андреевич',
-//         studyStart: 2024,
-//         birthday: new Date(1970, 7, 11),
-//         faculty: 'Информатика',
-//     },
-//     {
-//         // id: 2,
-//         name: 'Екатерина',
-//         surname: 'Аверченко',
-//         lastname: 'Спиридоновна',
-//         studyStart: 2023,
-//         birthday: new Date(2003, 1, 7),
-//         faculty: 'Химия',
-//     },
-//     {
-//         // id: 3,
-//         name: 'Геннадий',
-//         surname: 'Собакин',
-//         lastname: 'Кузьмич',
-//         studyStart: 2020,
-//         birthday: new Date(1962, 10, 24),
-//         faculty: 'Оптика',
-//     },
-//     {
-//         // id: 4,
-//         name: 'Остап',
-//         surname: 'Бендер',
-//         lastname: 'Ибрагимович',
-//         studyStart: 1995,
-//         birthday: new Date(1905, 4, 12),
-//         faculty: 'Комбинаторика',
-//     },
-//     {
-//         // id: 5,
-//         name: 'Ипполит',
-//         surname: 'Воробъянинов',
-//         lastname: 'Матвеевич',
-//         studyStart: 2021,
-//         birthday: new Date(1897, 2, 28),
-//         faculty: 'Маркетинг',
-//     },
-//     {
-//         // id: 6,
-//         name: 'Михаил',
-//         surname: 'Паниковский',
-//         lastname: 'Самуэлевич',
-//         studyStart: 2011,
-//         birthday: new Date(1967, 2, 6),
-//         faculty: 'Маркетинг',
-//     },
-//     {
-//         // id: 7,
-//         name: 'Карп',
-//         surname: 'Якин',
-//         lastname: 'Савельевич',
-//         studyStart: 2021,
-//         birthday: new Date(1880, 8, 30),
-//         faculty: 'Оптика',
-//     }
-// ]
-
 // Полные ФИО
 function getFullName(studentsList) {
     return studentsList.surname + ' ' + studentsList.name + ' ' + studentsList.lastname;
@@ -310,17 +245,6 @@ function getStudentItem(studentObj) {
     }
 }
 
-// Создание уникального id
-// function getNewID(studentsArray) {
-//     let max = 0;
-//     for (const item of studentsArray) {
-//         if (item.id > 0) {
-//             max = item.id
-//         }
-//     }
-//     return max + 1;
-// }
-
 // Вывод всех студентов в таблицу
 function renderStudentsTable(studentsArray) {
     for (let item of studentsArray) {
@@ -329,7 +253,6 @@ function renderStudentsTable(studentsArray) {
 }
 
 // Отрисовка DOM-дерева
-
 document.addEventListener('DOMContentLoaded', async function () {
     let containerStudentList = document.getElementById('students-list');
     let studentsListTitle = createStudentListTitle('Список студентов');
@@ -359,6 +282,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             input.value = ''
         }
     }
+    
     // Добавление нового студента
     newStudentForm.studentForm.addEventListener('submit', async function (e) {
         e.preventDefault();
@@ -493,9 +417,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Очистка таблицы
     function cleanTable() {
         let studentsTable = document.getElementById('students-table');
-        // while (studentsTable.firstChild) {
-        //     studentsTable.removeChild(studentsTable.firstChild);
-        // }
         studentsTable.innerHTML = '';
     }
 
@@ -583,8 +504,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     dateAgeSort.classList.add('head-title');
     learnTimeSort.classList.add('head-title');
     let sortWay = true;
-
-    // newArr = [...studentsList];
 
     fioSort.addEventListener('click', function () {
         newArr = [...studentsList];
